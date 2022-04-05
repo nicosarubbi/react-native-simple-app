@@ -1,22 +1,18 @@
-/**
- * If you are not familiar with React Navigation, refer to the "Fundamentals" guide:
- * https://reactnavigation.org/docs/getting-started
- *
- */
- import * as React from 'react';
+import * as React from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import ModalScreen from '../screens/ModalScreen';
-import NotFoundScreen from '../screens/NotFoundScreen';
-import Page1 from '../screens/Page1';
-import Page2 from '../screens/Page2';
+import ModalScreen from './screens/ModalScreen';
+import NotFoundScreen from './screens/NotFoundScreen';
+import Page1 from './screens/Page1';
+import Page2 from './screens/Page2';
 
 
 const Stack = createNativeStackNavigator();
 
-
-export default function Navigation() {
+function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Page1">
@@ -30,5 +26,14 @@ export default function Navigation() {
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
+  );
+}
+
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <Navigation />
+      <StatusBar />
+    </SafeAreaProvider>
   );
 }

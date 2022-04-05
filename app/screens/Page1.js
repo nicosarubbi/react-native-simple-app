@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Text, View, Button, TextInput, CheckBox } from 'react-native';
+import { Text, View, Button, TextInput } from 'react-native';
 // import CheckBox from '@react-native-community/checkbox';
 import { styles } from '../components/Styles';
 import { serviceGet } from '../hooks/service';
-import { getData, storeData } from '../hooks/useCachedResources';
+import { getData, storeData } from '../hooks/cache';
 
 
 export default function Page1({ route,  navigation }) {
@@ -69,10 +69,10 @@ export default function Page1({ route,  navigation }) {
         <Button title="Aceptar" onPress={onPressOk} />
       </View>
 
-      <View style={styles.checkboxContainer}>
+      {/* <View style={styles.checkboxContainer}>
         <CheckBox style={styles.checkbox} value={rememberme} onValueChange={setRememberme} /><p>Recordarme</p>
       </View>
-      
+       */}
       <View style={styles.separator} />
     </View>
 );
