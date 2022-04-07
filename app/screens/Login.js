@@ -6,7 +6,7 @@ import { serviceGet } from '../hooks/service';
 import { getData, storeData } from '../hooks/cache';
 
 
-export default function Page1({ route,  navigation }) {
+export default function Login({ route,  navigation }) {
   let params = route.params;
 
   const [username, setUsername] = React.useState("")
@@ -39,7 +39,7 @@ export default function Page1({ route,  navigation }) {
         } else {
           storeData('rememberUser', {})
         }
-        navigation.navigate("Page2", {user})
+        navigation.navigate("Home", {user})  //Page2
       } else {
         setErrorMessage("usuario o contraseña inválido")
       }

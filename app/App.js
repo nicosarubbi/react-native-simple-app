@@ -6,8 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // import ModalScreen from './screens/ModalScreen';
 // import NotFoundScreen from './screens/NotFoundScreen';
-import Page1 from './screens/Page1';
-import Page2 from './screens/Page2';
+import Login from './screens/Login';
+import Home from './screens/Home';
 import PageUser from './screens/PageUser';
 import ListPosts from './screens/ListPosts';
 import PageComment from './screens/PageComment';
@@ -21,9 +21,9 @@ const Stack = createNativeStackNavigator();
 function Navigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Page1">
-        <Stack.Screen name="Page1" component={Page1} options={{ title:'Legajo 126998' }} />  
-        <Stack.Screen name="Page2" component={Page2} options={{ title:'Page 2' }} />
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} options={{ title:'Legajo 126998' }} />  
+        <Stack.Screen name="Home" component={Home} options={{ title:'Home' }} />
         <Stack.Screen name="ListPosts" component={ListPosts} options={{ title:'Posts' }} />
         <Stack.Screen name="PageUser" component={PageUser} options={{ title:'Usuario' }} />
         <Stack.Screen name="PageComment" component={PageComment} options={{ title:'Comentario' }} />
