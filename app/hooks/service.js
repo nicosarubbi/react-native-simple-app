@@ -23,14 +23,13 @@ export async function servicePut(resource, body) {
     return client.put(resource, body)
 }
 
+export async function serviceDelete(resource) {
+    // delete a resource
+    console.log("API DELETE: ", resource)
+    return client.delete(resource)
+}
+
 /*
 test user: Antonette
 test password: Shanna@melissa.tv
 */
-
-
-let a = {
-    "clave": "valor",
-    "usuario": "nicolas",
-    "contraseña": "12345"
-}

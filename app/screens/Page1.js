@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, Button, TextInput } from 'react-native';
-// import CheckBox from '@react-native-community/checkbox';
 import { styles } from '../components/Styles';
+import CheckBox from '../components/checkbox';
 import { serviceGet } from '../hooks/service';
 import { getData, storeData } from '../hooks/cache';
 
@@ -44,7 +44,7 @@ export default function Page1({ route,  navigation }) {
         setErrorMessage("usuario o contraseña inválido")
       }
     })
-    .catch((error) => setErrorMessage(error))
+    .catch((error) => setErrorMessage(error.message))
   }
 
   return (
@@ -69,12 +69,13 @@ export default function Page1({ route,  navigation }) {
         <Button title="Aceptar" onPress={onPressOk} />
       </View>
 
-      {/* <View style={styles.checkboxContainer}>
-        <CheckBox style={styles.checkbox} value={rememberme} onValueChange={setRememberme} /><p>Recordarme</p>
-      </View>
-       */}
+      <CheckBox value={rememberme} onPress={setRememberme} title="Recordarme" />
+      
       <View style={styles.separator} />
     </View>
 );
 }
 
+
+// "username": "Antonette",
+// "email": "Shanna@melissa.tv",

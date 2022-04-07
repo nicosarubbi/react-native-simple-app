@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { styles } from '../components/Styles';
 
 
@@ -7,24 +7,27 @@ export default function Page2({ route,  navigation }) {
   const { user } = route.params;
 
   let onUsernamePress = () => {
-    navigation.navigate("Page3", { user })
+    navigation.navigate("PageUser", { user })
   }
+  let onPressPost = () => {
+    navigation.navigate("ListPosts", { user })
+  } 
+
+  let onPressAlbum = () => {
+    navigation.navigate("ListAlbum", { user })
+  } 
 
   return (
-    <View style={styles.container}>
+    <View style={styles.containerHome}>
       <Text style={styles.title} onPress={onUsernamePress}>Usuario: {user.username}</Text>
-      <Text style={styles.label}>Id:</Text>
-      <Text style={styles.text2}>{user.id}</Text>
-      <Text style={styles.label}>Nombre:</Text>
-      <Text style={styles.text2}>{user.name}</Text>
-      <Text style={styles.label}>Domicilio:</Text>
-      <Text style={styles.text2}>{user.address.street}, {user.address.suite}</Text>
-      <Text style={styles.label}>Ciudad:</Text>
-      <Text style={styles.text2}>{user.address.city}, {user.address.zipcode}</Text>
-      <Text style={styles.label}>Telefono:</Text>
-      <Text style={styles.text2}>{user.phone}</Text>
-      <Text style={styles.label}>website:</Text>
-      <Text style={styles.text2}>{user.website}</Text>
+      
+      <View style={styles.button}>
+          <Button title="Post" onPress={onPressPost}/> 
+      </View>
+
+      <View style={styles.button}>
+          <Button title="Album" onPress={onPressAlbum}/> 
+      </View>
     </View>
   );
 }
